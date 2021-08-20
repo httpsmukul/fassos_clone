@@ -1,0 +1,905 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  padding: 0;
+  font-family: 'Mulish', sans-serif;
+}
+
+:root {
+  --bodyBack: white;
+  --yellow: rgb(255, 211, 68);
+  --primaryColorLight: #6a55cc;
+  --primaryColorRegular: #57409a;
+  --primaryColorDark: #190b46;
+  --blackText: #333333;
+  --grayText: #7e7e7e;
+  --whiteLight: #fff;
+  --whiteRegular: #f5f5f5;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Mulish', sans-serif;
+  background-color: var(--whiteRegular);
+  margin: 0px;
+  width: 100%;
+  font-size: 1.3rem;
+  color: var(--blackText);
+}
+
+html {
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+/* ------------------------------------------ Navbar Area ---------------------------------------------- */
+
+nav {
+  background-color: var(--whiteLight);
+  width: 100%;
+  box-shadow: rgb(0 0 0 / 4%) 0px 4px 8px 0px;
+}
+
+#navContainer {
+  max-width: 1170px;
+  margin: 0px auto;
+  padding: 1.6rem 0.5rem;
+  display: flex;
+  flex-direction: row;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+}
+
+#navLeft > a > img {
+  width: 68px;
+  height: 40px;
+}
+
+#navLeft,
+#navRight {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#navLeft > *,
+#navRight > * {
+  margin-right: 20px;
+}
+
+#navLocation > p:nth-child(1) {
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+
+nav #userName,
+nav .hamburger {
+  color: var(--primaryColorRegular);
+  cursor: pointer;
+}
+
+/* --------------------------------------- Sidebar CSS  ----------------------------------- */
+
+#sidebar {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  height: 100vh;
+  position: fixed;
+  z-index: 111;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+#sidebarMain {
+  height: 100%;
+  position: relative;
+  margin-right: -400px;
+  transition: transform 0.5s linear;
+}
+
+.activeSideBar {
+  transform: translateX(-400px) !important;
+}
+
+#sidebarList {
+  max-width: 400px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  background-color: var(--whiteLight);
+}
+
+#sidebarList > span {
+  position: absolute;
+  top: 1.5rem;
+  right: 2.5rem;
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+#sidebarNavList {
+  display: flex;
+  flex-direction: column;
+  padding-top: 6rem;
+}
+
+#sidebarNavList > li {
+  width: 100%;
+  cursor: pointer;
+}
+
+#sidebarNavList > li > a {
+  display: flex;
+  align-items: center;
+  padding: 2.1rem 4rem;
+  width: 100%;
+}
+
+#sidebarNavList > li > a > span {
+  flex: 1 1 12.5%;
+  max-width: 12.5%;
+}
+
+#sidebarNavList > li > a > span > img {
+  width: 30px;
+  height: 30px;
+}
+
+#sidebarNavList > li > a > p {
+  flex: 1 1 75%;
+  font-size: 2rem;
+  font-weight: 500;
+  color: rgb(126, 126, 126) !important;
+}
+
+/* ------------------------------------------------Checkout area ---------------------------------------------------- */
+
+#checkoutMain {
+  /* margin: 2rem auto; */
+  background-color: var(--whiteRegular);
+  width: 100%;
+}
+
+#checkoutMainContainer {
+  width: 70%;
+  max-width: 1170px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+#checkoutDetails {
+  flex: 1 1 66.6667%;
+  max-width: 66.6667%;
+}
+
+#checkoutOrder {
+  flex: 1 1 33.3333%;
+  max-width: 33.3333%;
+}
+
+#checkoutDetails > div {
+  position: relative;
+  background: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#checkoutDetails > div > span.serialNumber {
+  font-size: 1.8rem;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.6rem;
+  border-radius: 50%;
+  text-align: center;
+  border: 1px solid rgb(224, 224, 224);
+  margin-right: 1rem;
+}
+
+#AccountSerial > i,
+#DeliverySerial > i,
+#PaymentSerial > i {
+  color: #23a112;
+}
+
+#Account_right {
+  font-size: 2rem;
+  color: rgb(51, 51, 51);
+  font-weight: 800;
+}
+
+#checkoutDetails > div > div > h3 {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+#Account_right > h3,
+#Account_right > p {
+  margin-bottom: 1rem;
+}
+
+#Account_right > P {
+  font-size: 1.1rem;
+  color: gray;
+  font-weight: 100;
+}
+
+.AccountButtons > button {
+  margin-right: 1.6rem;
+  display: inline-block;
+  box-shadow: rgb(0 0 0 / 12%) 0px 4px 8px 0px;
+  border: 2px solid var(--yellow);
+  background-color: var(--whiteLight);
+  padding: 1rem 1.5rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  font-weight: bold;
+  max-width: 130px;
+  text-transform: uppercase;
+}
+
+.AccountButtons > button:hover {
+  background-color: var(--yellow);
+}
+
+.AccountButtons > button > span {
+  color: var(--blackText);
+  font-size: 1.1rem;
+  display: block;
+  font-weight: 100;
+  text-transform: initial;
+}
+
+#Account_right > #userDetails {
+  font-size: 1.5rem;
+  color: rgb(51, 51, 51);
+  font-weight: 800;
+  margin-top: 1.6rem;
+}
+
+#DeliveryRight {
+  width: 90%;
+}
+
+.addresses {
+  display: flex;
+  flex: 1 1 auto;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
+}
+
+#addNewAddress {
+  background: var(--whiteLight);
+  border-radius: 4px;
+  position: relative;
+  margin-top: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  justify-content: center;
+  padding: 2.4rem;
+  border: 2px dashed var(--yellow);
+  text-align: center;
+  -webkit-box-align: center;
+  align-items: center;
+  width: 37%;
+}
+
+#addNewAddress > h3 {
+  color: var(--blackText);
+  margin-bottom: 2.3rem;
+}
+
+.yellowBtn {
+  background-color: var(--yellow);
+  outline: none;
+  border: none;
+  padding: 0.7rem 1.6rem;
+  border-radius: 0.4rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 1.2rem;
+  box-shadow: rgb(0 0 0 / 12%) 0px 4px 8px 0px;
+  cursor: pointer;
+}
+
+/* Add New Address Pop Up Start Here*/
+
+#openMapPopUp {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+  overflow: hidden auto;
+  transform: translateY(0%);
+  opacity: 1;
+  visibility: visible;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+#popUpMapContainer {
+  width: 50%;
+  max-width: 500px;
+  min-height: 90vh;
+  max-height: 100%;
+  border-radius: 4px;
+  background-color: white;
+  margin: 4rem auto;
+  padding: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+#popUpMapModal {
+  position: relative;
+  margin-bottom: 2.4rem;
+}
+
+#popUpMapModal > p {
+  font-size: 1.3rem;
+  color: rgb(126, 126, 126);
+  width: 100%;
+  white-space: normal;
+  font-weight: 400;
+}
+
+#backButton {
+  width: 1.4rem;
+  display: inline-block;
+  position: absolute;
+  left: -1.5rem;
+  top: -0.4rem;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+#popUpMapModal > .mapImage {
+  width: 120%;
+  margin-left: -8rem;
+  margin-top: -3rem;
+}
+
+#popUpMapContainer > form {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+#locationDiv > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#locationDiv > div > img {
+  width: 15px;
+  height: 15px;
+}
+
+#popUpMapContainer > form > input {
+  display: flex;
+  flex-direction: row;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: left;
+  padding: 1rem;
+  min-height: 6rem;
+  text-align: left;
+  border: 1px solid rgb(224, 224, 224);
+  border-radius: 4px;
+  font-size: 1.5rem;
+  color: rgb(51, 51, 51);
+  font-weight: 700;
+  cursor: pointer;
+  margin: 1rem;
+  width: 100%;
+}
+
+.typeOfAddress {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin: 1rem auto;
+}
+
+.typeOfAddress > input {
+  display: none;
+}
+
+.typeOfAddress > input:checked + label {
+  background-color: #57409a;
+  color: white;
+  font-weight: bold;
+  border: none;
+}
+
+.typeOfAddress > label {
+  width: 20%;
+  padding: 10px;
+  border: 1px solid #c4c4c4;
+  border-radius: 2rem;
+  text-align: center;
+  color: #999999;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+}
+
+.typeOfAddress > label > img {
+  width: 12px;
+  height: 12px;
+}
+
+#saveButton {
+  margin: 1rem;
+  background-color: #ffd344;
+  border: none;
+  outline: none;
+  box-shadow: rgb(0 0 0 / 12%) 0px 4px 8px 0px;
+  width: -webkit-fill-available;
+  font-size: 1.6rem;
+  padding: 1.4rem;
+  z-index: 1;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 0.4rem;
+}
+
+/* Add New Address Pop Up Ends Here*/
+
+.AddressCard {
+  background: var(--whiteLight);
+  border-radius: 4px;
+  border: 1px solid rgb(224, 224, 224);
+  padding: 2.4rem 4rem;
+  position: relative;
+  margin-top: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  -webkit-box-pack: center;
+  justify-content: center;
+  height: 100%;
+  width: 37%;
+}
+
+.AddressCardType {
+  position: relative;
+}
+
+.AddressCardType > h3,
+.AddressCardType > p {
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+}
+
+.AddressCard > .icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.AddressCardType > p {
+  color: var(--grayText);
+  font-size: 1.3rem;
+  white-space: normal;
+  letter-spacing: 0.5px;
+}
+
+#FinalDeliveryAddress {
+  margin-top: 1.2rem;
+}
+
+#FinalDeliveryAddress > p {
+  margin-top: 1.2rem;
+  font-size: 1.3rem;
+  color: rgb(126, 126, 126);
+  width: 100%;
+  white-space: normal;
+  font-weight: 400;
+}
+
+#PaymentRight {
+  width: 90%;
+}
+
+#PaymentDetails {
+  width: 100%;
+  margin-top: 2rem;
+  display: flex;
+}
+
+#PaymentOptions {
+  background-color: var(--whiteRegular);
+  border-radius: 1rem;
+  padding: 2rem 0px 2rem 1rem;
+  width: 35%;
+  margin-right: 2rem;
+}
+
+#PaymentOptions > li {
+  padding: 1.8rem 5rem;
+  display: flex;
+  align-items: center;
+  font-size: 1.8rem;
+  border-radius: 1rem 0 0 1rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.activePaymentOption {
+  font-weight: bold;
+  background-color: var(--whiteLight);
+}
+
+#PaymentOptions .paymentLogo {
+  width: 13px;
+  height: 13px;
+  padding: 0.5px 4px;
+  border: 0.5px solid darkgray;
+  border-radius: 3px;
+  margin-right: 1rem;
+}
+
+#PaymentMode {
+  padding: 2rem;
+  width: 70%;
+
+  border: 1px solid gainsboro;
+  border-radius: 2rem;
+}
+
+#Gpay {
+  padding: 1.6rem;
+  border: 1px solid var(--grayText);
+}
+
+#GPayImage {
+  display: flex;
+  justify-content: space-between;
+}
+
+#GPayImage > img {
+  height: 3rem;
+}
+
+#GPayImage > span > i {
+  color: #23a112;
+  font-size: 1.7rem;
+}
+
+#GPay > form {
+  position: relative;
+}
+
+#gpayNumber {
+  padding: 3rem 1rem 1rem 2rem;
+  border: 1px solid gainsboro;
+  color: gray;
+  font-size: 1.6rem;
+  font-weight: bold;
+  position: relative;
+  margin-top: 2rem;
+  border-radius: 0.5rem;
+}
+
+#GPay > form > label {
+  position: absolute;
+  left: 2.2rem;
+  top: 3rem;
+  color: gray;
+}
+
+#Gpay > form > span {
+  position: absolute;
+  top: 52%;
+  right: 40%;
+  color: green;
+}
+
+#payButton {
+  width: 90%;
+  padding: 1.6rem 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  background: var(--yellow);
+  outline: none;
+  border: none;
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: rgb(0 0 0 / 12%) 0px 4px 8px 0px;
+  cursor: pointer;
+}
+
+#CODInfo {
+  text-align: center;
+}
+
+#CODInfo > img {
+  height: 4rem;
+}
+
+#CODInfo > h3 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  text-align: left;
+  margin-top: 1rem;
+}
+
+#CODInfo > p {
+  margin-top: 1rem;
+  font-size: 1.3rem;
+  text-align: left;
+  color: var(--grayText);
+}
+
+.disableOption {
+  color: var(--grayText);
+  align-self: center;
+}
+
+/* CheckoutItems Details */
+
+#checkout {
+  flex: 1 1 31.6667%;
+  max-width: 31.6667%;
+  margin: 1rem 0;
+}
+
+#allCartItems {
+  width: 95%;
+  background-color: var(--whiteLight);
+  padding: 2rem;
+  height: fit-content;
+  border-radius: 0.4rem;
+}
+
+#allCartItems > h2 {
+  font-size: 1.8rem;
+}
+
+.cartItem {
+  display: flex;
+  margin-top: 1.6rem;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+.cartItemDetails {
+  width: 45%;
+  display: flex;
+}
+
+.cartItemDetails .cartItemName {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: rgb(51, 51, 51);
+  line-height: 1.2;
+  margin-bottom: 0.8rem;
+}
+
+.cartItemDetails .cartItemAddon {
+  color: rgb(153, 153, 153);
+  font-size: 1rem;
+}
+
+.cartItem .category {
+  margin-right: 0.8rem;
+}
+
+.cartItem .category > img {
+  width: 10px;
+  height: 10px;
+}
+
+.cartItemCount {
+  display: flex;
+  align-items: center;
+  perspective: 90px;
+}
+
+.cartItemCount > button {
+  margin: 0 1rem;
+  width: 33px;
+  height: 31px;
+  display: flex;
+  flex-direction: row;
+  box-shadow: rgb(0 0 0 / 12%) 0px 4px 8px 0px;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(255, 211, 68);
+  outline: none;
+  font-size: 1.6rem;
+  border-radius: 4px;
+  padding: 0px;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.cartItemCount > #increase {
+  transform: rotateY(-20deg);
+}
+
+.cartItemCount > #decrease {
+  transform: rotateY(20deg);
+}
+
+/*  Grand Total Div */
+
+#grandTotalDiv {
+  width: 95%;
+  padding: 2rem;
+  background: white;
+  box-shadow: rgb(0 0 0 / 4%) 0px 12px 16px 0px inset;
+}
+
+#grandTotalDiv > div {
+  font-size: 1.3rem;
+  display: flex;
+  justify-content: space-between;
+  color: var(--blackText);
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+}
+
+#grandTotalDiv > hr {
+  border: 1.3px solid var(--blackText);
+  margin: 1.1rem 0;
+  background-color: var(--blackText);
+}
+
+#grandTotalDiv > div:nth-last-child(1) {
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+
+#grandTotalDiv .greenText {
+  color: #23a112;
+}
+
+/* <----------------------------------------------footer area-------------------------------------------------------> */
+
+.footer {
+  background-color: var(--primaryColorDark);
+  /* height: 550px; */
+  padding: 50px 150px;
+}
+
+.footer1 {
+  float: left;
+  width: 21%;
+  padding: 1% 2%;
+}
+
+.footer2 {
+  width: 46%;
+  padding: 2%;
+}
+
+.footer3 {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.footer3 img {
+  margin: 0px 6px;
+}
+
+.footer1 > span,
+p ~ span {
+  font-size: 15px;
+  line-height: 25px;
+  font-weight: 700;
+  color: rgb(255, 255, 255);
+}
+
+.footer p {
+  font-size: 20px;
+  /* line-height: 0px; */
+  color: rgb(196, 196, 196);
+}
+
+.clear {
+  clear: both;
+}
+
+.floatL {
+  float: left;
+}
+
+.floatR {
+  float: right;
+}
+
+/* Media queries for medium screen sizes */
+@media (max-width: 1280px) {
+  #checkoutMainContainer {
+    flex-wrap: wrap;
+    min-width: 58rem;
+  }
+
+  #checkoutDetails {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  #checkout {
+    flex: 1 1 100%;
+    max-width: 100%;
+    margin: 1rem 0;
+  }
+}
+
+/* Media Queries for small screen sizes */
+@media (max-width: 960px) {
+  .footer {
+    height: fit-content;
+    padding: 1rem;
+  }
+
+  .footer p {
+    line-height: unset;
+  }
+}
+
+@media (max-width: 720px) {
+  #checkoutMainContainer {
+    min-width: unset;
+    width: unset;
+  }
+
+  #checkoutDetails > div {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .addresses {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #addNewAddress,
+  .AddressCard,
+  #grandTotalDiv,
+  #allCartItems {
+    width: unset;
+  }
+
+  #PaymentDetails {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #PaymentOptions {
+    width: unset;
+    margin-bottom: 1rem;
+  }
+
+  #addNew {
+    margin: 0 auto;
+  }
+}
